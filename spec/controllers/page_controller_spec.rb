@@ -11,8 +11,7 @@ describe Api::V1::PageController do
 
   context "post is sent to /api/v1/page/show" do
     it "get all changes for that pages url" do
-      post :show, :url => "http://sfbay.craigslist.org/",
-                    :selector => "ul#hhh0 li:nth-of-type(5) a.swp span.txt"
+      post :show, :url => "http://sfbay.craigslist.org/"
       JSON.parse(response.body).count.should eq(@page.changes.count)
     end
   end
